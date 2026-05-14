@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSSK Naturals | Premium Herbal Care</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #00b15d;
+      --dark: #0b1110;
+      --light: #f4fff7;
+      --soft: #dff8e7;
+      --text: #2a2a2a;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #f8fff9, #effcf3);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(0, 177, 93, 0.08);
+      border-radius: 50%;
+      top: -120px;
+      left: -120px;
+      filter: blur(40px);
+      z-index: -1;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      background: rgba(0, 177, 93, 0.06);
+      border-radius: 50%;
+      bottom: -100px;
+      right: -100px;
+      filter: blur(40px);
+      z-index: -1;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 34px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #00b15d, #00994d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #111;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--green);
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 100px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(0,177,93,0.25), transparent 70%);
+      top: -150px;
+      right: -150px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(14px);
+      padding: 12px 22px;
+      border-radius: 50px;
+      margin-bottom: 25px;
+      color: #0b8b49;
+      font-weight: 600;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .hero h1 {
+      font-size: 82px;
+      line-height: 1.05;
+      font-weight: 800;
+      color: #101010;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #00b15d, #00994d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.9;
+      color: #4f4f4f;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 17px 34px;
+      border-radius: 16px;
+      font-weight: 600;
+      transition: 0.35s;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #00b15d, #008f49);
+      color: white;
+      box-shadow: 0 15px 30px rgba(0,177,93,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.85);
+      color: #111;
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-6px);
+    }
+
+    .section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title span {
+      color: var(--green);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .section-title h2 {
+      font-size: 58px;
+      margin-top: 15px;
+      color: #111;
+    }
+
+    .feature-grid,
+    .benefits-grid,
+    .review-grid,
+    .products-grid {
+      display: grid;
+      gap: 30px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    }
+
+    .benefits-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .review-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .feature-card,
+    .benefit-box,
+    .review-card,
+    .faq-item,
+    .product-card {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 28px;
+      transition: 0.4s;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.07);
+    }
+
+    .feature-card:hover,
+    .benefit-box:hover,
+    .review-card:hover,
+    .product-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+    }
+
+    .feature-card {
+      padding: 40px 28px;
+    }
+
+    .feature-card h3 {
+      margin: 18px 0 12px;
+      font-size: 24px;
+      color: var(--green);
+    }
+
+    .product-card {
+      overflow: hidden;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-content {
+      padding: 32px;
+    }
+
+    .product-content h3 {
+      font-size: 30px;
+      margin-bottom: 14px;
+      color: #0a8d38;
+    }
+
+    .product-content p {
+      line-height: 1.9;
+      color: #555;
+    }
+
+    .price {
+      margin-top: 22px;
+      font-size: 36px;
+      font-weight: 800;
+      color: #111;
+    }
+
+    .order-btn {
+      display: inline-block;
+      margin-top: 24px;
+      background: linear-gradient(135deg, #00b15d, #008f49);
+      color: white;
+      padding: 15px 28px;
+      border-radius: 14px;
+      font-weight: 600;
+      box-shadow: 0 12px 25px rgba(0,177,93,0.25);
+    }
+
+    .benefit-box,
+    .review-card,
+    .faq-item {
+      padding: 35px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #00b15d, #008f49);
+      padding: 100px 40px;
+      border-radius: 40px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,177,93,0.25);
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      top: -120px;
+      right: -100px;
+    }
+
+    .cta h2 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta p {
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.9;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta .btn {
+      margin-top: 35px;
+      background: white;
+      color: #008f49;
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      background: #0b1110;
+      color: white;
+      padding: 100px 0 30px;
+      margin-top: 120px;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 18px;
+      font-size: 24px;
+    }
+
+    footer p {
+      color: #bcbcbc;
+      line-height: 1.9;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 50px;
+      padding-top: 25px;
+      text-align: center;
+      color: #8f8f8f;
+    }
+
+    @media(max-width: 768px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .section-title h2 {
+        font-size: 38px;
+      }
+
+      .cta h2 {
+        font-size: 40px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+
+  <nav>
+    <div class="container nav-wrapper">
+      <div class="logo">MSSK Naturals</div>
+
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="badge">
+        Premium Herbal Care Collection ✨
+      </div>
+
+      <h1>Natural Glow Ka Real Secret</h1>
+
+      <p>
+        Discover the power of herbal beauty care with MSSK Naturals.
+        Specially designed for glowing skin, healthy hair and natural freshness.
+        Made for men & women across Pakistan.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="https://wa.me/923215183640" class="btn btn-primary">
+          Order on WhatsApp
+        </a>
+
+        <a href="#products" class="btn btn-secondary">
+          Explore Products
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features -->
+
+  <section class="features">
+    <div class="container feature-grid">
+
+      <div class="feature-card">
+        <h3>🌿 Herbal Formula</h3>
+        <p>Natural ingredients specially selected for healthy skin and hair care.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🚚 COD Available</h3>
+        <p>Cash on delivery available all over Pakistan with fast shipping.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>✨ Premium Quality</h3>
+        <p>High quality herbal products for natural glow and freshness.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>💚 Safe For Use</h3>
+        <p>Suitable for men & women and designed for daily skincare routines.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Products -->
+
+  <section class="section" id="products">
+    <div class="container">
+
+      <div class="section-title">
+        <span>Our Collection</span>
+        <h2>Featured Products</h2>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <img src="WhatsApp Image 2026-05-12 at 4.13.48 PM.jpeg" alt="Herbal Oil">
+
+          <div class="product-content">
+            <h3>Shifa Gold Herbal Oil</h3>
+
+            <p>
+              Pure oil mixture of organic herbal ingredients that helps nourish hair,
+              support healthy shine and improve scalp freshness.
+            </p>
+
+            <div class="price">Rs. 500</div>
+
+            <a href="https://wa.me/923215183640" class="order-btn">
+              Order Now
+            </a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="WhatsApp Image 2026-05-12 at 4.13.46 PM.jpeg" alt="Face Scrub">
+
+          <div class="product-content">
+            <h3>Shifa Gold Whitening Scrub</h3>
+
+            <p>
+              Gentle exfoliating scrub for glowing, fresh and smooth skin.
+              Helps remove dirt, oil and dead skin for a brighter appearance.
+            </p>
+
+            <div class="price">Rs. 500</div>
+
+            <a href="https://wa.me/923215183640" class="order-btn">
+              Order Now
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits -->
+
+  <section class="section" id="benefits" style="background:#eefbf1;">
+    <div class="container">
+
+      <div class="section-title">
+        <span>Why Choose Us</span>
+        <h2>Benefits Of MSSK Naturals</h2>
+      </div>
+
+      <div class="benefits-grid">
+
+        <div class="benefit-box">✅ Removes dead skin gently</div>
+        <div class="benefit-box">✅ Improves skin texture</div>
+        <div class="benefit-box">✅ Natural glow enhancement</div>
+        <div class="benefit-box">✅ Deep cleansing action</div>
+        <div class="benefit-box">✅ Soft & smooth skin feel</div>
+        <div class="benefit-box">✅ Refreshing herbal fragrance</div>
+        <div class="benefit-box">✅ Suitable for all skin types</div>
+        <div class="benefit-box">✅ Men & women both can use</div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Reviews -->
+
+  <section class="section reviews" id="reviews">
+    <div class="container">
+
+      <div class="section-title">
+        <span>Customer Feedback</span>
+        <h2>What People Say</h2>
+      </div>
+
+      <div class="review-grid">
+
+        <div class="review-card">
+          ⭐⭐⭐⭐⭐
+          <p>
+            Face scrub use karne ke baad skin bohat fresh aur soft feel hoti hai.
+            Result honestly expected se better tha.
+          </p>
+          <strong>— Sana Khan</strong>
+        </div>
+
+        <div class="review-card">
+          ⭐⭐⭐⭐⭐
+          <p>
+            Oil use kar raha hoon 2 weeks se. Hair smooth aur healthy lag rahe hain.
+            Herbal smell bhi bohat achi hai.
+          </p>
+          <strong>— Ahmed Raza</strong>
+        </div>
+
+        <div class="review-card">
+          ⭐⭐⭐⭐⭐
+          <p>
+            Packaging aur quality dono premium lagi.
+            Skin pe harsh feel nahi hota.
+          </p>
+          <strong>— Hira Ali</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+
+  <section class="section" id="faq" style="background:#eefbf1;">
+    <div class="container">
+
+      <div class="section-title">
+        <span>Questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are these products herbal?</h3>
+        <p>Yes, MSSK Naturals products are based on herbal and natural ingredients.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can men & women both use these products?</h3>
+        <p>Yes, these products are suitable for both men and women.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is Cash On Delivery available?</h3>
+        <p>Yes, Cash On Delivery is available all across Pakistan.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How long does delivery take?</h3>
+        <p>Usually delivery takes around 3–5 working days.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="cta">
+        <h2>Ready For Natural Glow?</h2>
+
+        <p>
+          Order your favorite MSSK Naturals herbal products today and experience
+          premium natural skincare and haircare at affordable prices.
+        </p>
+
+        <a href="https://wa.me/923215183640" class="btn">
+          Order on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>MSSK Naturals</h3>
+          <p>
+            Premium herbal skincare and haircare collection designed for natural beauty and healthy glow.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <p>Products</p>
+          <p>Benefits</p>
+          <p>Reviews</p>
+          <p>FAQ</p>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <p>📲 +92 321 5183640</p>
+          <p>🚚 Delivery All Over Pakistan</p>
+          <p>💚 Cash On Delivery Available</p>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 MSSK Naturals — All Rights Reserved.
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
